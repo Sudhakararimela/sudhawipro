@@ -266,3 +266,135 @@ System.out.println();
 }
 }
 }
+
+-----------------------------------------------------------------------------------------------
+class and Object:-
+---------------------------
+class :- It is a collection of data members and member functions.
+It is a blue print of an Object.
+It is also called as an Object factory.
+-----------------
+Object is an ref pointer to the class.
+We can access variables and methods of a class by using an Object.
+--------------------------------------------------------
+example-11
+------------------
+package org.sandip;
+import java.util.*;
+public class Student 
+{
+int rollno;//instance variable and can be accessed all over the program
+String name,address;
+void input()
+{
+	Scanner ob=new Scanner(System.in);
+	System.out.println("enter rollno,name,address");
+	rollno=ob.nextInt();
+	name=ob.next();
+	address=ob.next();
+}
+void display()
+{
+	System.out.println("the rollno is "+rollno);
+	System.out.println("the name is "+name);
+	System.out.println("the address is "+address);
+	}
+public static void main(String[] args)
+{
+Student ob=new Student();//Student is the class,ob is the object,new to create memory block,student() is a constructor
+ob.input();
+ob.display();
+}
+}
+--------------------------------------------------------------------------
+when we close the program the data are send to grabage clearance.
+There is no destructor in java .There is automatic garbage clearance.
+-------------------------------------------------------------------------------------------
+step 1:- class declaration
+step 2:- main
+step 3:- creating object
+step 4:- accessing variables and methods.
+---------------------------------------------------------------------------
+wap to enter an employee data
+and display it.
+empno,name,address,salary.
+----------------------------------------------------
+Example-12
+------------------
+package org.sandip;
+import java.util.*;
+public class Employee 
+{
+int empno;
+String name,address;
+float salary;
+void input()
+{
+	Scanner ob=new Scanner(System.in);
+	System.out.println("enter empno,name,address,salary");
+	empno=ob.nextInt();
+	name=ob.next();
+	address=ob.next();
+	salary=ob.nextFloat();
+}
+void display()
+{
+	System.out.println("the empno is "+empno+"The name is "+name);
+	System.out.println("the address is "+address+"The salary is "+salary);
+	}
+public static void main(String[] args) {
+	Employee ob=new Employee();
+	ob.input();
+	ob.display();
+}
+}
+--------------------------------------------------------------
+example-13
+---------------------
+wap to enter student's data
+rollno,name,address,phy,chem,bio marks
+find the total,avg,and grade of the student.
+-----------------------------------------------------------------
+package org.sandip;
+import java.util.*;
+public class StudentData 
+{
+	int rollno,phy,chem,bio,tot,avg;
+	String name,address,grade;
+	void input()
+	{
+		Scanner ob=new Scanner(System.in);
+		System.out.println("enter rollno,name and address");
+		rollno=ob.nextInt();
+		name=ob.next();
+		address=ob.next();
+		System.out.println("enter phy,chem,bio marks");
+		phy=ob.nextInt();
+		chem=ob.nextInt();
+		bio=ob.nextInt();
+		tot=phy+chem+bio;
+		avg=tot/3;
+			}
+	void display()
+	{
+		System.out.println("The rollno is "+rollno);
+		System.out.println("The name is "+name);
+		System.out.println("The address is "+address);
+		System.out.println("The total is "+tot);
+		System.out.println("The average is "+avg);
+		if(avg>=70)
+			System.out.println("First Division");
+		else if(avg>=60)
+			System.out.println("Second Division");
+		else if(avg>=50)
+			System.out.println("Third Division");
+		else 
+			System.out.println("fail");
+				}
+public static void main(String[] args) {
+	StudentData ob=new StudentData();
+	ob.input();
+	ob.display();
+}
+}
+------------------------------------------------------------------------------------------
