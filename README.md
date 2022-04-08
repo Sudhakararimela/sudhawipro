@@ -476,3 +476,101 @@ default:System.out.println("wrong input");
 }
 }
 --------------------------------------------------------------------
+Constructor
+------------------
+A constructor is a method which has the same name as that of the class name.
+It doenot have any return type nor it return any value.
+A constructor execute automatically when an object is created for a class.
+There are 2 types of constructor
+1)default constructor :- It is without any parameter.
+2)parameterized constructor:- It is with parameter.
+----------------------------------------------------------------------------------------
+Example-15
+-------------------
+package org.sandip;
+
+public class Constructor
+{
+Constructor()
+{
+	System.out.println("This is default constructor");
+}
+Constructor(int a,int b)
+{
+	System.out.println("the sum is "+(a+b));
+}
+public static void main(String[] args) {
+	Constructor ob1=new Constructor();
+	Constructor ob2=new Constructor(4,5);
+	Constructor ob3=new Constructor(6,7);
+	Constructor ob4=new Constructor();
+		}
+}
+------------------------------------------------------------------------
+example-16
+---------------------
+package org.sandip;
+
+public class Constructor
+{
+int rollno;//instance variables can be accessed any where within the program
+String name,address,email;
+//right click --->source ->Generate constructor using fields 
+public Constructor(int rollno, String name, String address, String email) //local variables scope is within the () 
+{
+	this.rollno = rollno;//this is a self ref pointer ,points to itself.we are using bcos to differ between local and instance var
+	this.name = name;
+	this.address = address;
+	this.email = email;
+}
+void display()
+{
+	System.out.println("the rollno is "+rollno+"the name is "+name);
+	System.out.println("the address is "+address+"the email is "+email);
+	}
+public static void main(String[] args)
+{
+	Constructor ob=new Constructor(101,"sandip","Bangalore","sandip@gmail.com");
+	ob.display();
+		}
+}
+---------------------------------------------------------------------------------
+wap to enter an employee data and display it using constructor
+empno,name,salary,designation
+-------------------------------------------------------------------------------
+example-17
+------------------
+package org.sandip;
+import java.util.*;
+public class ConstructorDemo 
+{
+int empno;
+String name,address,design;
+float salary;
+public ConstructorDemo(int empno, String name, String address, String design, float salary) {
+	this.empno = empno;
+	this.name = name;
+	this.address = address;
+	this.design = design;
+	this.salary = salary;
+}
+void display()
+{
+	System.out.println("the empno is "+empno);
+	System.out.println("the name is "+name);
+	System.out.println("the address is "+address+"The design is "+design);
+	System.out.println("the salary is "+salary);
+	}
+public static void main(String[] args) 
+{
+	Scanner ob=new Scanner(System.in);
+	System.out.println("enter empno,name,address,design,salary");
+	int empno=ob.nextInt();
+	String name=ob.next(), address=ob.next(), design=ob.next();
+	float salary=ob.nextFloat();
+	
+	ConstructorDemo ob1=new ConstructorDemo(empno, name, address, design, salary);
+	ob1.display();
+}
+}
+--------------------------------------------
