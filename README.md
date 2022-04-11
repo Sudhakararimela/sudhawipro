@@ -639,3 +639,111 @@ public static void main(String[] args) {
 	}
 }
 ----------------------------------------------------------------------------------
+wap to enter productid,productname,productprice
+and display it.using getter() and setter().
+----------------------------------------------------------------------------
+Inheritance --(IS-A) relationship.
+java supports single inheritance,multi-level inheritance,hyrarchal inheritance.
+It is one of the oops concept.
+In this we  reuse the code of the parent class into the child class.
+we use the keyword super to access the parent class variables and methods into the child class.
+we use the keyword extends to inherite the parent class into the child class.
+-----------------------------------------------------------------
+java doesnot support multiple and hybrid inheritance.
+we use interface in java to perform multiple inheritance.
+------------------------------------------------------------------------------------
+Aggregation --(Has-a) relationship
+Employee has-a address
+Bank has-a customer
+-----------------------------------------------
+Type casting
+------------------
+They are 2 types
+1)implicit casting
+2)explicit casting
+----------------------------------------------
+example-1
+-----------------
+public class Snippet {
+	public static void main(String[] args)
+	{
+		byte x=10;
+		short y=x;
+		System.out.println(y);
+		
+	}
+--------------------------------------------------------------------
+public class Snippet {
+	public static void main(String[] args)
+	{
+		byte x=10,z=20;
+		short y=(short) (x+z);
+		System.out.println(y);
+		
+	}
+}
+--------------------------------------------------------------
+example-2
+---------------------
+explicit casting
+-----------------------
+public static void main(String[] args)
+	{
+		short x=10;
+		byte y=(byte) x;
+		System.out.println(y);
+		
+	}
+}
+--------------------------------------------------------------------
+example-1
+-----------------
+package org.inheritance;
+
+public class Student 
+{
+int rollno;
+String name,address;
+public Student(int rollno, String name, String address) {
+	this.rollno = rollno;
+	this.name = name;
+	this.address = address;
+}
+
+
+void display()
+{
+	System.out.println("The rollno is "+rollno);
+	System.out.println("The name is "+name);
+	System.out.println("The address is "+address);
+	}
+}
+-----------------------------------------------
+package org.inheritance;
+
+public class Marks extends Student
+{
+int phy,chem,maths;
+
+public Marks(int rollno, String name, String address, int phy, int chem, int maths) 
+{
+	super(rollno, name, address);
+	this.phy = phy;
+	this.chem = chem;
+	this.maths = maths;
+}
+void display()
+{
+	super.display();
+	System.out.println("the phy marks is "+phy+"the chem marks is "+chem+"the maths marks is "+maths);
+	System.out.println("The total is "+(phy+chem+maths));
+	System.out.println("The avg is "+(phy+chem+maths)/3);
+	}
+public static void main(String[] args) {
+	Marks ob=new Marks(101,"sandip","hyd",77,55,56);
+	ob.display();
+}
+}
+----------------------------------------------------------------------------------------------------------
+
+
