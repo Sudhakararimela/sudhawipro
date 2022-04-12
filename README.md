@@ -745,5 +745,128 @@ public static void main(String[] args) {
 }
 }
 ----------------------------------------------------------------------------------------------------------
+wap to create Bank class (accno,name,balance)
+Create customer class (custid,name,address)
 
+Customer class extends Bank class.
+-----------------------------------------------------------------------
+Is-a relationship is tight coupling where as Has-a relationship is a loose coupling.
+----------------------------------------------------------------------------
+
+example-1
+-------------------
+package org.inheritance;
+
+public class Employee {
+int empno;
+String name,email;
+Address address;
+public Employee(int empno, String name, String email, Address address) {
+	this.empno = empno;
+	this.name = name;
+	this.email = email;
+	this.address = address;
+}
+void display()
+{
+	System.out.println("the empno is "+empno);
+	System.out.println("the name is "+name);
+	System.out.println("the empno is "+email);
+	System.out.println("the empno is "+address);
+	}
+}
+-----------------------------------------
+package org.inheritance;
+
+public class Address 
+{
+int roadno,streetno;
+String houseno,loc,city;
+public Address(int roadno, int streetno, String houseno, String loc, String city) {
+	this.roadno = roadno;
+	this.streetno = streetno;
+	this.houseno = houseno;
+	this.loc = loc;
+	this.city = city;
+}
+@Override
+public String toString() 
+{
+	return "Address [roadno=" + roadno + ", streetno=" + streetno + ", houseno=" + houseno + ", loc=" + loc + ", city="
+			+ city + "]";
+}}
+----------------------------------------------------------------------------------------
+package org.inheritance;
+
+public class MainClass 
+{
+public static void main(String[] args)
+{
+	Address add=new Address(10,20,"b/123","MG road","bangalore");
+	Employee emp=new Employee(101,"sandip","sandip@gmail.com",add);
+	emp.display();
+}
+}
+-------------------------------------------------------------------------------
+----------------------------------------------
+Example for HAS-A relationship 
+-----------------------------------------------
+package inheritence;
+
+public class Customerbuy {
+String name,address,email;
+String phno;
+Productbuy productbuy;
+public Customerbuy(String name, String address, String email, String phno,Productbuy productbuy)
+{
+	this.name = name;
+	this.address = address;
+	this.email = email;
+	this.phno = phno;
+	this.productbuy=productbuy;
+}
+void display()
+{
+	 System.out.println("Customer name is "+name);
+	 System.out.println("Customer adress is "+address);
+	 System.out.println("Customer email is "+email);
+	 System.out.println("Customer phone no is "+phno);
+	 System.out.println("Product details bought by customer is "+productbuy);
+	}
+}
+---------------------------------------------------------------------
+
+package inheritence;
+
+public class Productbuy {
+ int productid;
+ String name,dateofdel;
+ float price;
+public Productbuy(int productid, String name, String dateofdel, float price) {
+	this.productid = productid;
+	this.name = name;
+	this.dateofdel = dateofdel;
+	this.price = price;
+}
+@Override
+public String toString() {
+	return "Productbuy [productid=" + productid + ", name=" + name + ", dateofdel=" + dateofdel + ", price=" + price
+			+ "]";
+}
+
+}
+--------------------------------------------------------------------
+
+package inheritence;
+
+public class Mainbuy {
+	public static void main(String[] args) {
+		
+	
+	Productbuy p=new Productbuy(199,"sugar","11/4/2022",200);
+	Customerbuy c=new Customerbuy("siva","vizag","siva123@gmail.com","9999922222",p);
+	c.display();
+}
+}
+------------------------------------------------------------------------------
 
